@@ -1,69 +1,77 @@
 <!doctype html>
 <html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>ONNAMU Website Mockups Dashboard</title>
+<title>ONNAMU Website Mockups</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:system-ui,-apple-system,"Noto Sans KR",sans-serif;background:#f4f6f3;color:#1d2a22}
 header{background:linear-gradient(120deg,#1f4d36,#3c7a55);color:#fff;padding:40px 24px 32px}
-.wrap{max-width:1100px;margin:0 auto}h1{margin:0 0 6px;font-size:30px}header p{margin:0;opacity:.85}
+.wrap{max-width:1100px;margin:0 auto}.top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+h1{margin:0 0 6px;font-size:30px}header p{margin:0;opacity:.85}
+.lang{display:flex;background:rgba(255,255,255,.15);border-radius:22px;padding:4px}.lang button{border:0;background:none;color:#fff;padding:7px 14px;border-radius:18px;cursor:pointer;font-size:14px}.lang button.on{background:#fff;color:#1f4d36;font-weight:600}
 .stats{display:flex;gap:12px;margin-top:22px;flex-wrap:wrap}.stat{background:rgba(255,255,255,.14);border-radius:12px;padding:10px 16px}.stat b{font-size:22px;display:block}
 .bar{display:flex;gap:8px;margin:24px 0 8px;flex-wrap:wrap}.bar button{border:1px solid #c9d6cc;background:#fff;border-radius:20px;padding:7px 16px;cursor:pointer;font-size:14px}.bar button.on{background:#1f4d36;color:#fff;border-color:#1f4d36}
 .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:18px;padding-bottom:48px}
 .card{position:relative;display:block;background:#fff;border-radius:16px;padding:22px 22px 52px;text-decoration:none;color:inherit;box-shadow:0 2px 8px rgba(0,0,0,.06);transition:.15s}
 .card:hover{transform:translateY(-3px);box-shadow:0 8px 22px rgba(0,0,0,.12)}
 .card h2{margin:12px 0 4px;font-size:22px}.ko{margin:0;color:#3c7a55;font-weight:600}.t{color:#667;font-size:14px;margin:8px 0 0}
-.tag{font-size:12px;padding:3px 10px;border-radius:10px;font-weight:600}.indonesia{background:#fde8e8;color:#b42318}.korea{background:#e5efff;color:#1d4ed8}
+.tag{font-size:12px;padding:3px 10px;border-radius:10px;font-weight:600}.tag.id{background:#fde8e8;color:#b42318}.tag.kr{background:#e5efff;color:#1d4ed8}
 .go{position:absolute;left:22px;bottom:18px;color:#1f4d36;font-weight:600}.sz{position:absolute;right:22px;bottom:18px;color:#99a;font-size:13px}
+.l{display:none}html[lang=ko] .l[lang=ko],html[lang=en] .l[lang=en],html[lang=id] .l[lang=id]{display:inline}
 footer{text-align:center;color:#889;font-size:13px;padding:0 0 32px}
 </style></head><body>
-<header><div class="wrap"><h1>ONNAMU Website Mockups</h1><p>온나무 웹사이트 목업 대시보드 · 카드를 누르면 새 탭에서 열려요</p>
-<div class="stats"><div class="stat"><b>6</b>전체 목업</div><div class="stat"><b>4</b>인도네시아</div><div class="stat"><b>2</b>대한민국</div></div></div></header>
+<header><div class="wrap"><div class="top"><div><h1 data-i="title"></h1><p data-i="sub"></p></div>
+<div class="lang"><button data-l="ko">한국어</button><button data-l="en">English</button><button data-l="id">Bahasa Indonesia</button></div></div>
+<div class="stats"><div class="stat"><b>6</b><span data-i="total"></span></div><div class="stat"><b>4</b><span data-i="s_id"></span></div><div class="stat"><b>2</b><span data-i="s_kr"></span></div></div></div></header>
 <main class="wrap">
-<div class="bar"><button class="on" data-f="all">전체 All</button><button data-f="Indonesia">인도네시아</button><button data-f="Korea">대한민국</button></div>
+<div class="bar"><button class="on" data-f="all" data-i="f_all"></button><button data-f="id" data-i="f_id"></button><button data-f="kr" data-i="f_kr"></button></div>
 <div class="grid">
-<a class="card" data-c="Indonesia" href="Bandung-website%20mockups.html" target="_blank" rel="noopener">
-  <span class="tag indonesia">Indonesia</span>
-  <h2>Bandung</h2>
-  <p class="ko">인도네시아 · 반둥</p>
+<a class="card" data-c="id" href="Bandung-website%20mockups.html" target="_blank" rel="noopener">
+  <span class="tag id" data-i="tag_id"></span>
+  <h2><span class="l" lang="ko">반둥</span><span class="l" lang="en">Bandung</span><span class="l" lang="id">Bandung</span></h2>
+  <p class="ko"><span class="l" lang="ko">인도네시아 · 반둥</span><span class="l" lang="en">Indonesia · Bandung</span><span class="l" lang="id">Indonesia · Bandung</span></p>
   <p class="t">Bandung · Enam Era Sejarah Kota</p>
-  <span class="go">열기 · Open →</span><span class="sz">17.5 MB</span>
+  <span class="go" data-i="open"></span><span class="sz">17.5 MB</span>
 </a>
-<a class="card" data-c="Indonesia" href="Banten-website%20mockups.html" target="_blank" rel="noopener">
-  <span class="tag indonesia">Indonesia</span>
-  <h2>Banten</h2>
-  <p class="ko">인도네시아 · 반텐</p>
+<a class="card" data-c="id" href="Banten-website%20mockups.html" target="_blank" rel="noopener">
+  <span class="tag id" data-i="tag_id"></span>
+  <h2><span class="l" lang="ko">반텐</span><span class="l" lang="en">Banten</span><span class="l" lang="id">Banten</span></h2>
+  <p class="ko"><span class="l" lang="ko">인도네시아 · 반텐</span><span class="l" lang="en">Indonesia · Banten</span><span class="l" lang="id">Indonesia · Banten</span></p>
   <p class="t">Banten · since 1526 — Six Artifacts of the Sultanate</p>
-  <span class="go">열기 · Open →</span><span class="sz">14.2 MB</span>
+  <span class="go" data-i="open"></span><span class="sz">14.2 MB</span>
 </a>
-<a class="card" data-c="Korea" href="FOES%20Flavor%20Odyssey%20East%20Sea-website%20mockups.html" target="_blank" rel="noopener">
-  <span class="tag korea">Korea</span>
-  <h2>FOES Flavor Odyssey East Sea</h2>
-  <p class="ko">대한민국 · 동해 미식</p>
+<a class="card" data-c="kr" href="FOES%20Flavor%20Odyssey%20East%20Sea-website%20mockups.html" target="_blank" rel="noopener">
+  <span class="tag kr" data-i="tag_kr"></span>
+  <h2><span class="l" lang="ko">FOES 동해 미식 여행</span><span class="l" lang="en">FOES Flavor Odyssey East Sea</span><span class="l" lang="id">FOES Flavor Odyssey East Sea</span></h2>
+  <p class="ko"><span class="l" lang="ko">대한민국 · 동해 미식</span><span class="l" lang="en">Korea · East Sea cuisine</span><span class="l" lang="id">Korea · Kuliner Laut Timur</span></p>
   <p class="t">Flavor Odyssey East Sea</p>
-  <span class="go">열기 · Open →</span><span class="sz">22.0 MB</span>
+  <span class="go" data-i="open"></span><span class="sz">22.0 MB</span>
 </a>
-<a class="card" data-c="Indonesia" href="Makassar-website%20mockups.html" target="_blank" rel="noopener">
-  <span class="tag indonesia">Indonesia</span>
-  <h2>Makassar</h2>
-  <p class="ko">인도네시아 · 마카사르</p>
+<a class="card" data-c="id" href="Makassar-website%20mockups.html" target="_blank" rel="noopener">
+  <span class="tag id" data-i="tag_id"></span>
+  <h2><span class="l" lang="ko">마카사르</span><span class="l" lang="en">Makassar</span><span class="l" lang="id">Makassar</span></h2>
+  <p class="ko"><span class="l" lang="ko">인도네시아 · 마카사르</span><span class="l" lang="en">Indonesia · Makassar</span><span class="l" lang="id">Indonesia · Makassar</span></p>
   <p class="t">Makassar Heritage · Six Sites &amp; Objects</p>
-  <span class="go">열기 · Open →</span><span class="sz">13.5 MB</span>
+  <span class="go" data-i="open"></span><span class="sz">13.5 MB</span>
 </a>
-<a class="card" data-c="Indonesia" href="Mandalika-website%20mockups.html" target="_blank" rel="noopener">
-  <span class="tag indonesia">Indonesia</span>
-  <h2>Mandalika</h2>
-  <p class="ko">인도네시아 · 만달리카</p>
+<a class="card" data-c="id" href="Mandalika-website%20mockups.html" target="_blank" rel="noopener">
+  <span class="tag id" data-i="tag_id"></span>
+  <h2><span class="l" lang="ko">만달리카</span><span class="l" lang="en">Mandalika</span><span class="l" lang="id">Mandalika</span></h2>
+  <p class="ko"><span class="l" lang="ko">인도네시아 · 만달리카</span><span class="l" lang="en">Indonesia · Mandalika</span><span class="l" lang="id">Indonesia · Mandalika</span></p>
   <p class="t">Mandalika Heritage · Six Sites &amp; Objects</p>
-  <span class="go">열기 · Open →</span><span class="sz">13.4 MB</span>
+  <span class="go" data-i="open"></span><span class="sz">13.4 MB</span>
 </a>
-<a class="card" data-c="Korea" href="Sangju%20Sambaek-website%20mockups.html" target="_blank" rel="noopener">
-  <span class="tag korea">Korea</span>
-  <h2>Sangju Sambaek</h2>
-  <p class="ko">대한민국 · 상주</p>
+<a class="card" data-c="kr" href="Sangju%20Sambaek-website%20mockups.html" target="_blank" rel="noopener">
+  <span class="tag kr" data-i="tag_kr"></span>
+  <h2><span class="l" lang="ko">상주 삼백</span><span class="l" lang="en">Sangju Sambaek</span><span class="l" lang="id">Sangju Sambaek</span></h2>
+  <p class="ko"><span class="l" lang="ko">대한민국 · 상주 삼백</span><span class="l" lang="en">Korea · Sangju</span><span class="l" lang="id">Korea · Sangju</span></p>
   <p class="t">The Three Whites of Sangju · 상주 삼백</p>
-  <span class="go">열기 · Open →</span><span class="sz">13.6 MB</span>
+  <span class="go" data-i="open"></span><span class="sz">13.6 MB</span>
 </a>
 </div></main>
-<footer>© 주식회사 온나무 ONNAMU · 목업 파일이 커서 처음 여는 데 몇 초 걸릴 수 있어요</footer>
+<footer data-i="foot"></footer>
 <script>
+const T={"ko": {"title": "ONNAMU 웹사이트 목업", "sub": "온나무 웹사이트 목업 대시보드 · 카드를 누르면 새 탭에서 열려요", "total": "전체 목업", "s_id": "인도네시아", "s_kr": "대한민국", "f_all": "전체", "f_id": "인도네시아", "f_kr": "대한민국", "tag_id": "인도네시아", "tag_kr": "대한민국", "open": "열기 →", "foot": "© 주식회사 온나무 ONNAMU · 파일이 커서 처음 여는 데 몇 초 걸릴 수 있어요"}, "en": {"title": "ONNAMU Website Mockups", "sub": "ONNAMU website mockup dashboard · Click a card to open it in a new tab", "total": "Mockups", "s_id": "Indonesia", "s_kr": "Korea", "f_all": "All", "f_id": "Indonesia", "f_kr": "Korea", "tag_id": "Indonesia", "tag_kr": "Korea", "open": "Open →", "foot": "© ONNAMU Co., Ltd. · Files are large, so the first load may take a few seconds"}, "id": {"title": "Mockup Situs Web ONNAMU", "sub": "Dasbor mockup situs web ONNAMU · Klik kartu untuk membuka di tab baru", "total": "Total mockup", "s_id": "Indonesia", "s_kr": "Korea", "f_all": "Semua", "f_id": "Indonesia", "f_kr": "Korea", "tag_id": "Indonesia", "tag_kr": "Korea", "open": "Buka →", "foot": "© ONNAMU Co., Ltd. · Ukuran file besar, pemuatan pertama bisa memakan beberapa detik"}};
+function setLang(l){if(!T[l])l='ko';document.documentElement.lang=l;document.querySelectorAll('[data-i]').forEach(e=>e.textContent=T[l][e.dataset.i]);document.querySelectorAll('.lang button').forEach(b=>b.classList.toggle('on',b.dataset.l===l));document.title=T[l].title;try{localStorage.setItem('lang',l)}catch(e){};history.replaceState(null,'','#'+l)}
+document.querySelectorAll('.lang button').forEach(b=>b.onclick=()=>setLang(b.dataset.l));
+let s=location.hash.slice(1);try{s=s||localStorage.getItem('lang')}catch(e){};setLang(s||'ko');
 document.querySelectorAll('.bar button').forEach(b=>b.onclick=()=>{document.querySelectorAll('.bar button').forEach(x=>x.classList.remove('on'));b.classList.add('on');const f=b.dataset.f;document.querySelectorAll('.card').forEach(c=>c.style.display=(f==='all'||c.dataset.c===f)?'':'none')});
 </script></body></html>
